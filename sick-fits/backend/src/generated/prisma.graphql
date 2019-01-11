@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/matthew-blaul/sick-fits/dev
-# timestamp: Thu Jan 10 2019 21:58:38 GMT-0500 (STD)
+# timestamp: Thu Jan 10 2019 22:36:12 GMT-0500 (STD)
 
 type AggregateItem {
   count: Int!
@@ -14,17 +14,13 @@ type BatchPayload {
   count: Long!
 }
 
-scalar DateTime
-
 type Item implements Node {
   id: ID!
   title: String!
-  descripStringtion: String!
+  description: String!
   image: String
   largeImage: String
   price: Int!
-  createdAt: DateTime!
-  updatedAt: DateTime!
 }
 
 """A connection to a list of items."""
@@ -39,7 +35,7 @@ type ItemConnection {
 
 input ItemCreateInput {
   title: String!
-  descripStringtion: String!
+  description: String!
   image: String
   largeImage: String
   price: Int!
@@ -59,29 +55,27 @@ enum ItemOrderByInput {
   id_DESC
   title_ASC
   title_DESC
-  descripStringtion_ASC
-  descripStringtion_DESC
+  description_ASC
+  description_DESC
   image_ASC
   image_DESC
   largeImage_ASC
   largeImage_DESC
   price_ASC
   price_DESC
-  createdAt_ASC
-  createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
 }
 
 type ItemPreviousValues {
   id: ID!
   title: String!
-  descripStringtion: String!
+  description: String!
   image: String
   largeImage: String
   price: Int!
-  createdAt: DateTime!
-  updatedAt: DateTime!
 }
 
 type ItemSubscriptionPayload {
@@ -125,7 +119,7 @@ input ItemSubscriptionWhereInput {
 
 input ItemUpdateInput {
   title: String
-  descripStringtion: String
+  description: String
   image: String
   largeImage: String
   price: Int
@@ -133,7 +127,7 @@ input ItemUpdateInput {
 
 input ItemUpdateManyMutationInput {
   title: String
-  descripStringtion: String
+  description: String
   image: String
   largeImage: String
   price: Int
@@ -228,46 +222,46 @@ input ItemWhereInput {
 
   """All values not ending with the given string."""
   title_not_ends_with: String
-  descripStringtion: String
+  description: String
 
   """All values that are not equal to given value."""
-  descripStringtion_not: String
+  description_not: String
 
   """All values that are contained in given list."""
-  descripStringtion_in: [String!]
+  description_in: [String!]
 
   """All values that are not contained in given list."""
-  descripStringtion_not_in: [String!]
+  description_not_in: [String!]
 
   """All values less than the given value."""
-  descripStringtion_lt: String
+  description_lt: String
 
   """All values less than or equal the given value."""
-  descripStringtion_lte: String
+  description_lte: String
 
   """All values greater than the given value."""
-  descripStringtion_gt: String
+  description_gt: String
 
   """All values greater than or equal the given value."""
-  descripStringtion_gte: String
+  description_gte: String
 
   """All values containing the given string."""
-  descripStringtion_contains: String
+  description_contains: String
 
   """All values not containing the given string."""
-  descripStringtion_not_contains: String
+  description_not_contains: String
 
   """All values starting with the given string."""
-  descripStringtion_starts_with: String
+  description_starts_with: String
 
   """All values not starting with the given string."""
-  descripStringtion_not_starts_with: String
+  description_not_starts_with: String
 
   """All values ending with the given string."""
-  descripStringtion_ends_with: String
+  description_ends_with: String
 
   """All values not ending with the given string."""
-  descripStringtion_not_ends_with: String
+  description_not_ends_with: String
   image: String
 
   """All values that are not equal to given value."""
@@ -370,50 +364,6 @@ input ItemWhereInput {
 
   """All values greater than or equal the given value."""
   price_gte: Int
-  createdAt: DateTime
-
-  """All values that are not equal to given value."""
-  createdAt_not: DateTime
-
-  """All values that are contained in given list."""
-  createdAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  createdAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  createdAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  createdAt_lte: DateTime
-
-  """All values greater than the given value."""
-  createdAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-
-  """All values that are not equal to given value."""
-  updatedAt_not: DateTime
-
-  """All values that are contained in given list."""
-  updatedAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  updatedAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  updatedAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  updatedAt_lte: DateTime
-
-  """All values greater than the given value."""
-  updatedAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  updatedAt_gte: DateTime
 }
 
 input ItemWhereUniqueInput {
