@@ -1,7 +1,3 @@
-const Query = {
-  dogs(parent, args, ctx, info) {
-    return [{ name: 'Snickers' }, { name: 'Sunny' }];
-  }
-};
+const Query = {};
 
 module.exports = Query;

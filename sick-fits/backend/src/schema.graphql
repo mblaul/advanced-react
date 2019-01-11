@@ -1,11 +1,16 @@
-type Dog {
-  name: String!
-}
+#This files hosts the public facing data endpoints
 
+#import * from './generated/prisma.graphql'
 type Mutation {
-  createDog(name: String!): Dog
+  createItem(
+    title: String
+    description: String
+    price: Int
+    image: String
+    largeImage: String
+  ): Item!
 }
 
 type Query {
-  dogs: [Dog]!
+  items: [Item]!
 }
