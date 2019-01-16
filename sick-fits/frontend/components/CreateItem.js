@@ -112,7 +112,7 @@ class CreateItem extends Component {
 									name="price"
 									placeholder="Price"
 									required
-									value={formatMoney(price)}
+									value={price}
 									onChange={this.handleChange}
 								/>
 							</label>
