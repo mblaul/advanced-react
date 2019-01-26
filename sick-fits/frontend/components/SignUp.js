@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
-import queryState from '../lib/queryHelper';
+import { queryState } from '../lib/queryHelper';
 
 const SIGNUP_MUTATION = gql`
 	mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
 		signup(email: $email, name: $name, password: $password) {
 			id
 			email
-			Name
+			name
 		}
 	}
 `;
@@ -32,9 +32,16 @@ class SignUp extends Component {
 			<Mutation mutation={SIGNUP_MUTATION} variables={this.state}>
 				{(signup, { error, loading }) => {
 					return (
-						<Form>
+						<Form
+							method="post"
+							onSubmit={(e) => {
+								e.preventDefault();
+								signup();
+							}}
+						>
 							<fieldset disabled={loading} aria-busy={loading}>
 								<h2>Sign up for an account</h2>
+								{error && queryState({ error })}
 								<label htmlFor="email">
 									Email
 									<input type="text" name="email" value={email} onChange={this.saveToState} />
