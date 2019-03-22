@@ -58,7 +58,7 @@ class SignUp extends Component {
                 </label>
                 <label htmlFor="password">
                   Password
-                  <input type="text" name="password" value={password} onChange={this.saveToState} />
+                  <input type="password" name="password" value={password} onChange={this.saveToState} />
                 </label>
 
                 <button type="submit">Sign Up!</button>
