@@ -1,5 +1,5 @@
 import CreateItem from '../components/CreateItem';
-import PleaseSignIn from '../components/SignIn';
+import PleaseSignIn from '../components/PleaseSignIn';
 
 const Sell = (props) => (
   <div>
