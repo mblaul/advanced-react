@@ -29,8 +29,6 @@
     "url": "wesbos.com"
   },
   "babel": {
-    "presets": [
-      "env"
-    ]
+    "presets": [ "env" ]
   }
 }
